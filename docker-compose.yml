@@ -6,11 +6,16 @@ services:
       replicas: 2
     ports:
       - "5001-5002:5000"
+    volumes:
+      - ./quote_gen:/app
   web2:
     build: ./quote_disp
     deploy:
       replicas: 2
+    restart: always
     ports:
       - "6001-6002:5001"
     depends_on:
       - web1
+    volumes:
+      - ./quote_disp:/app
