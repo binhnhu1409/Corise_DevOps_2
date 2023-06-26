@@ -19,12 +19,12 @@ def home():
 @app.route("/get_quote")
 def quote():
     hosts = [
-        "http://corise_devops_week2-web1-1:5000/quote"
+        "http://corise_devops_week2-web1-1:5000/quote",
         "http://corise_devops_week2-web1-2:5000/quote"
     ]
     quote = "Quote serivce is unavailable"
     for host in hosts:
-        request = requests.get(hosts)
+        request = requests.get(host)
         if request.status_code == 200:
             quote = request.text
             break

@@ -8,6 +8,7 @@ services:
       - "5001-5002:5000"
     volumes:
       - ./quote_gen:/app
+
   web2:
     build: ./quote_disp
     deploy:
