@@ -13,7 +13,7 @@ def test_home_page(test_client):
     assert response.status_code == 200
 
 def test_health_page(test_client):
-    response = test_client.get("/heath")
+    response = test_client.get("/health")
     assert response.status_code == 200
     assert "healthy" in str(response.data)
 
